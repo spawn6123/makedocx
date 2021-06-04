@@ -25,5 +25,6 @@ def getfiles(despath):
     for root, dirs, files in walk(despath):
         for f in files:
             fullfilepath = join(despath, f)
-            outfilepath.append(fullfilepath)
+            if not f.endswith(".approj"):
+                outfilepath.append(fullfilepath)
         return outfilepath
